@@ -1,5 +1,6 @@
 const products = [
-  {_id:1,
+  {
+    _id: 1,
     name: 'portable cheers pure woods',
     image: '/images/1.png',
     description:
@@ -12,8 +13,8 @@ const products = [
     numReviews: 0,
   },
   {
-    _id:2,
-    name: 'Bads for Rooms house and guesthouse',
+    _id: 2,
+    name: 'Beds for Rooms house and guesthouse',
     image: '/images/11.jpg',
     description:
       'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
@@ -25,8 +26,8 @@ const products = [
     numReviews: 0,
   },
   {
-    _id:3,
-    name: 'Portable Bads For Home with best quality',
+    _id: 3,
+    name: 'Portable Beds For Home with best quality',
     image: '/images/3.jpg',
     description:
       'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
@@ -37,7 +38,8 @@ const products = [
     rating: 0,
     numReviews: 0,
   },
-  { _id:4,
+  {
+    _id: 4,
     name: 'showcase to keeps your clothes and Thing',
     image: '/images/22.jpg',
     description:
@@ -49,7 +51,8 @@ const products = [
     rating: 0,
     numReviews: 0,
   },
-  {_id:5,
+  {
+    _id: 5,
     name: 'Traditional Executive Furniture Set'
     ,
     image: '/images/33.jpg',
@@ -62,7 +65,8 @@ const products = [
     rating: 0,
     numReviews: 0,
   },
-  { _id:6,
+  {
+    _id: 6,
     name: 'Traditional Executive Furniture Set'
     ,
     image: '/images/2.png',

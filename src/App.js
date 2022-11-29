@@ -9,21 +9,26 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import products from './products';
 import LoginScreen from './screen/LoginScreen';
 import RegisterScreen from './screen/RegisterScreen';
+import AddProduct from "./screen/AddProduct"
+import ViewCart from "./screen/ViewCart"
+import OrderForm from "./screen/OrderForm"
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <main className='py-3'>
-        <Container>
-          <Routes>
-            <Route path='/' element={<HomeScreen />} exact />
-            <Route path='/product/:id' element={<ProductScreen product={products} />} />
-            <Route path='/login' element={<LoginScreen />} />
-            <Route path='/register' element={<RegisterScreen />} />
-          </Routes>
+      {/* <Header /> */}
 
-        </Container>
-      </main>
+
+      <Routes>
+        <Route path='/' element={<HomeScreen />} exact />
+        <Route path='/product/:id' element={<ProductScreen product={products} />} />
+        <Route path='/login' element={<LoginScreen />} />
+        <Route path='/register' element={<RegisterScreen />} />
+        <Route path='/addProduct' element={<AddProduct />} />
+        <Route path='/viewCart' element={<ViewCart />} />
+        <Route path='/paymentDetails' element={<OrderForm />} />
+      </Routes>
+
+
       <Footer />
     </BrowserRouter>
   );
