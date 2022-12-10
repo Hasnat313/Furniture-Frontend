@@ -1,31 +1,38 @@
 import axios from "axios";
 /*eslint-disable*/
+import { setupInterceptorsTo } from "../interceptor";
+const data = JSON.parse(localStorage.getItem("userData"))
 
 const config = {
     headers: { 'content-type': 'multipart/form-data' }
 }
 
-const API = axios.create({
+const API = setupInterceptorsTo(
 
-    baseURL: "http://localhost:5001"
-    // baseURL: "https://furniture-store-app.herokuapp.com"
+    axios.create({
 
-});
-const PAYMENTAPI = axios.create({
+        baseURL: "http://localhost:5006"
+        // baseURL: "https://furniture-store-app.herokuapp.com"
 
-    baseURL: "http://localhost:5002"
-    // baseURL: "https://furniture-store-app.herokuapp.com"
+    }));
+const PAYMENTAPI = setupInterceptorsTo(
+    axios.create({
 
-});
-const CARTAPI = axios.create({
+        baseURL: "http://localhost:5002"
+        // baseURL: "https://furniture-store-app.herokuapp.com"
 
-    baseURL: "http://localhost:5003"
-    // baseURL: "https://furniture-store-app.herokuapp.com"
+    }));
+const CARTAPI = setupInterceptorsTo(
 
-});
+    axios.create({
+
+        baseURL: "http://localhost:5003"
+        // baseURL: "https://furniture-store-app.herokuapp.com"
+
+    }));
 const USERAPI = axios.create({
 
-    baseURL: "http://localhost:5000"
+    baseURL: "http://localhost:5005"
     // baseURL: "https://furniture-store-app.herokuapp.com"
 
 });

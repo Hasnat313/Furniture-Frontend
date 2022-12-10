@@ -39,11 +39,16 @@ function Header() {
         <>
             <Navbar bg='dark' expand='lg' variant='dark'>
                 <Container fluid >
-                    <Navbar.Brand href='/'>Furniture Store</Navbar.Brand>
+                    <Navbar.Brand href='/Home'>Furniture Store</Navbar.Brand>
                     <Nav className=''>
                         <Nav.Link onClick={() => { call(); handleOpen() }}>Cart</Nav.Link>
                         <Nav.Link href='/addProduct'>Add Product</Nav.Link>
-                        <Nav.Link href='/login'>Logout</Nav.Link>
+                        <Nav.Link onClick={() => {
+                            localStorage.removeItem("userData")
+                            localStorage.removeItem("refreshToken")
+                            localStorage.removeItem("accessToken")
+                            localStorage.removeItem("cartId")
+                        }} href='/'>Logout</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
@@ -62,7 +67,7 @@ function Header() {
 
                             <ListItem key={index} sx={{ display: "flex", flex: "1" }}>
                                 <ListItemAvatar sx={{ width: "20%" }}>
-                                    <Avatar alt="Remy Sharp" sx={{ width: 56, height: 56 }} src={element?.image?.replace("public", "http://localhost:5001")} />
+                                    <Avatar alt="Remy Sharp" sx={{ width: 56, height: 56 }} src={element?.image?.replace("public", "http://localhost:5006")} />
                                 </ListItemAvatar>
                                 <ListItemText width="60%"
                                     primary={element?.name}

@@ -8,7 +8,7 @@ import { addToCart } from "../Api";
 function Product({ product, callback }) {
     console.log(product.image);
 
-    const imagedata = product?.image?.replace("public", "http://localhost:5001")
+    const imagedata = product?.image?.replace("public", "http://localhost:5006")
     console.log(imagedata);
 
 

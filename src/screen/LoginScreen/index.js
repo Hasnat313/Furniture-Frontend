@@ -22,11 +22,14 @@ function LoginScreen() {
                 if (data.status === 200) {
                     // alert("Successfully LoggedIn")
                     localStorage.setItem("userData", JSON.stringify(data.user));
+                    localStorage.setItem("accessToken", JSON.stringify(data.user.token));
+                    localStorage.setItem("refreshToken", JSON.stringify(data.user.refreshToken));
 
                     const { data: cartId } = await getCartId(data.user.id);
                     console.log(cartId);
+
                     localStorage.setItem("cartId", JSON.stringify(cartId.listing._id))
-                    navigate("/");
+                    navigate("/Home");
                 }
             }
             catch (e) {

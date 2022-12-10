@@ -4,8 +4,9 @@ import { useFormik } from 'formik';
 import { addProduct, uploadProductImage, userFormSignup } from "../../Api";
 import { Container } from "@mui/material";
 import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
 function RegisterScreen() {
-
+    const navigate = useNavigate();
     const [image, setImage] = useState();
     const { values, handleChange, handleSubmit } = useFormik({
         initialValues: {
@@ -27,10 +28,18 @@ function RegisterScreen() {
                 console.log(imageData);
                 console.log(formData);
                 values.image = imageData.images;
-                const { data } = await addProduct(values);
+                const data = await addProduct(values);
+                console.log(data);
+                // if (data === undefined) {
+                //     const data = await addProduct(values);
+                //     if (data?.status === 200) {
+                //         alert("Successfully Added")
+                //     }
+                // }
                 // console.log(data);
-                if (data.status === 200) {
+                if (data?.status === 200) {
                     alert("Successfully Added")
+                    navigate("/Home")
                 }
             }
             catch (e) {

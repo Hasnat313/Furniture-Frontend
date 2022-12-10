@@ -22,10 +22,13 @@ const HomeScreen = () => {
         async function call() {
             try {
 
-                const { data } = await getAllProducts();
-                // console.log(data);
-                console.log(data.listing);
-                setProducts(data.listing);
+                const resp = await getAllProducts();
+                console.log(resp);
+                // if (resp === undefined) {
+                //     call();
+                // }
+                console.log(resp.data.listing);
+                setProducts(resp.data.listing);
             }
             catch (e) {
                 console.log(e);

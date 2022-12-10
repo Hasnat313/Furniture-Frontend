@@ -10,7 +10,7 @@ function RegisterScreen() {
     const { values, handleChange, handleSubmit } = useFormik({
         initialValues: {
             userId: '',
-            paymentMethod: '',
+            paymentMethod: 'COD',
             city: '',
             postalCode: "",
             fullAddress: ""
@@ -30,7 +30,7 @@ function RegisterScreen() {
                     const cartId = JSON.parse(localStorage.getItem("cartId"));
                     const { data } = await delProductsFromCart(cartId);
                     if (data.status === 200)
-                        navigate("/")
+                        navigate("/Home")
                 }
             }
             catch (e) {

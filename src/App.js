@@ -19,9 +19,9 @@ function App() {
 
 
       <Routes>
-        <Route path='/' element={<HomeScreen />} exact />
+        <Route path='/' element={<LoginScreen />} />
+        <Route path='/Home' element={<HomeScreen />} exact />
         <Route path='/product/:id' element={<ProductScreen product={products} />} />
-        <Route path='/login' element={<LoginScreen />} />
         <Route path='/register' element={<RegisterScreen />} />
         <Route path='/addProduct' element={<AddProduct />} />
         <Route path='/viewCart' element={<ViewCart />} />
