@@ -69,7 +69,7 @@ function RegisterScreen() {
                         <Button variant="primary" className="mt-3" onClick={handleSubmit}>Register</Button>
                     </Form>
                 </Box>
-                <Button variant="secondary" className="mt-3" onClick={() => { navigate("/login") }}>Already have account? Login</Button>
+                <Button variant="secondary" className="mt-3" onClick={() => { navigate("/") }}>Already have account? Login</Button>
             </Container>
         </>
     )
